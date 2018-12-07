@@ -1,0 +1,10 @@
+- name: Set Timezone to UTC
+  timezone:
+    name: UTC
+  when: tz == "UTC" or tz == "utc"
+  ignore_errors: yes   
+- name: Set Timezone to EST
+  timezone:
+    name: EST
+  when: tz == "EST" or tz == "est"
+  ignore_errors: yes   
