@@ -1,0 +1,13 @@
+--- # Master Playbook for web servers
+- hosts: centos
+  remote_user: ansible
+  become: yes
+  become_method: sudo
+  connection: ssh
+  gather_facts: yes
+  vars_prompt:
+    name: tz
+    prompt: Which TimeZone [UTC/EST]?
+    default: UTC
+  roles:
+    - timezone
